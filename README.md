@@ -71,15 +71,15 @@ Construir un proceso automatizado de comprensión de datos que genere:
 ## 4. Plan del proyecto
 
 ### Etapas del proceso
-1. **Comprensión del negocio** (fase actual).  
-2. **Comprensión de los datos:** inspección de la base de datos, diccionario, calidad y exploración inicial.  
-3. **Preparación de datos:** limpieza, selección y transformación de variables.  
-4. **Modelado:** técnicas estadísticas.  
+1. **Comprensión del negocio** Incluye el contexto, los objetivos y los recursos que vamos a manejar en el proyecto..  
+2. **Comprensión de los datos:** exploración inicial de la base de datos, diccionario, problemas de calidad.  
+3. **Preparación de datos:** limpieza: selección de variables, tratamiento de valores faltantes .  
+4. **Modelado:** técnicas estadísticas para describir y comparar los datos. 
 5. **Evaluación:** validación de resultados frente a objetivos de negocio.  
-6. **Despliegue:** entrega de reportes y visualizaciones en GitHub.  
+6. **Despliegue:** entrega de reportes en GitHub: reportes en CSV y gráficos en PNG
 
 ### Evaluación inicial de herramientas y técnicas
-- Python ofrece librerías adecuadas para análisis exploratorio (**Pandas, Seaborn, Matplotlib**).  
+- Para el análisis haremos uso de Python, ofrece librerías adecuadas para análisis exploratorio (**Pandas, Seaborn, Matplotlib**).  
 - GitHub permite reproducibilidad y control de versiones.  
 
 ---
