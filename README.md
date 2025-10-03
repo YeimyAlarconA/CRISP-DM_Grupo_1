@@ -1,91 +1,85 @@
-# CRISP‑DM · Fase: **Data Understanding** (clase en VS Code + Git)
+# 📊 Fase 1 – Comprensión del Negocio (CRISP-DM)
 
-Este repositorio está diseñado para una clase de **2 horas** de *Python for Data Mining* enfocada en la fase **Data Understanding** de CRISP‑DM, trabajando **desde Visual Studio Code** y **con GitHub**.
-
-## Objetivos didácticos
-1. Entender cómo una **estructura de proyecto** clara acelera el ciclo CRISP‑DM.
-2. Practicar **versionamiento** (Git) desde VS Code.
-3. Ejecutar un pipeline reproducible de **carga**, **perfilamiento básico** y **reporte** de datos.
-
-## Estructura
-```
-crispdm_data_understanding_class/
-├─ data/
-│  ├─ raw/                # Datos originales (solo lectura)
-│  ├─ interim/            # Datos temporales/limpios
-│  └─ processed/          # Datos listos para modelado
-├─ notebooks/             # (opcional) notebooks de exploración
-├─ reports/
-│  ├─ figures/            # Gráficos exportados
-│  └─ data_dictionary.csv # Diccionario de datos generado
-├─ src/
-│  ├─ data/
-│  │  └─ load_data.py     # Lectura robusta de datos
-│  ├─ eda/
-│  │  └─ eda.py           # Funciones de Data Understanding
-│  └─ utils/
-│     └─ logging_utils.py # Logger consistente
-├─ .gitignore
-├─ requirements.txt
-├─ README.md
-└─ class_data_understanding.py  # Script principal CLI
-```
-
-> Se incluye un dataset de ejemplo: `data/raw/Enc_SS.xlsx`
-
-## Preparación (5-10 min)
-1. **Crear repo en GitHub** (privado o público).
-2. En **VS Code**: `Ctrl+Shift+P` → *Git: Clone* → pega la URL del repo.
-3. En terminal del proyecto:
-   ```bash
-   python -m venv .venv
-   # Activar:
-   # Windows: .venv\Scripts\activate
-   # macOS/Linux: source .venv/bin/activate
-   pip install -r requirements.txt
-   ```
-4. Verifica que está el archivo de ejemplo en `data/raw/Enc_SS.xlsx`.
-
-## Uso (clase práctica, ~60-75 min)
-Ejecuta el *pipeline* de Data Understanding sobre el archivo de ejemplo:
-```bash
-python class_data_understanding.py --input data/raw/Enc_SS.xlsx --sep auto --sheet 0
-```
-- Genera:
-  - `reports/data_dictionary.csv`
-  - `reports/quality_flags.json`
-  - Gráficos en `reports/figures/`
-  - CSVs auxiliares en `data/interim/`
-
-### Otros ejemplos
-- CSV con separador `;`:
-  ```bash
-  python class_data_understanding.py --input data/raw/datos.csv --sep ";"
-  ```
-- Excel con hoja por nombre:
-  ```bash
-  python class_data_understanding.py --input data/raw/otra.xlsx --sheet "Hoja1"
-  ```
-
-## Guion sugerido para 2 horas
-**0-15 min** · *Setup & Git*
-- Clonar repo, crear rama `feature/eda-inicial`, primer commit.
-- Explicar `.gitignore`, `requirements.txt`, estructura de carpetas.
-
-**15-75 min** · *Data Understanding hands-on*
-- Cargar datos: `src/data/load_data.py`.
-- Inspección: tamaño, tipos, nulos, cardinalidades, duplicados.
-- Diccionario de datos y *quality flags*.
-- Gráficos: faltantes, histogramas, boxplots, correlación.
-
-**75-100 min** · *Buenas prácticas*
-- Discute decisiones (constantes, alta cardinalidad, codificación).
-- Registrar *issues* y *TODOs* en el repo.
-
-**100-120 min** · *GitHub Flow*
-- Pull request → code review (en parejas) → merge a `main`.
-- Cierra con *tag* `v0.1-data-understanding`.
+**Proyecto:** Análisis de datos NNA_TI  
+**Equipo:** Yeimy Alarcón, Ricardo Vargas, María José Galindo  
+**Fecha:** Octubre 2025  
 
 ---
 
-> Tip: Activa la extensión **Jupyter** en VS Code para correr celdas tipo notebook en archivos `.py` (# %%).
+## 1. Determinación de objetivos de negocio
+
+### Contexto
+La base de datos **NNA_TI** contiene información proveniente de fichas de intervención y seguimiento a niños, niñas y adolescentes en diferentes localidades de **Bogotá**.  
+El propósito de este proyecto es **identificar patrones, riesgos y oportunidades de mejora en la atención**.
+
+### Objetivo principal
+Evaluar la calidad, cobertura y características de las intervenciones realizadas a niños, niñas y adolescentes de las localidades de Bogotá.
+
+### Objetivos específicos
+- Analizar la distribución de las variables demográficas y contextuales.  
+- Identificar problemas de calidad en la recolección de datos (datos faltantes o inconsistencias).  
+- Generar reportes visuales y tabulares para apoyar la toma de decisiones de las entidades responsables.  
+
+### Criterios de éxito de negocio
+- Disponer de un sistema de reportes claros y reproducibles que permitan:  
+  - Detectar vacíos de información en variables críticas.  
+  - Presentar indicadores descriptivos confiables.  
+  - Facilitar comparaciones entre localidades, perfiles y tipos de intervención.  
+
+---
+
+## 2. Evaluación de la situación
+
+### Inventario de recursos
+- **Personal:** 3 analistas de datos (equipo del proyecto) + profesor guía.  
+- **Datos:** Base Excel `base_datos_completa_NNA_TI_anon.xlsx` con 56.474 registros y 115 variables. Incluye un diccionario de variables en la hoja `variables`.  
+- **Software:** Python (Pandas, Matplotlib, Seaborn), Visual Studio Code, Google Colab.  
+- **Hardware:** Codespaces de GitHub y computadores personales.  
+
+### Riesgos y contingencias
+- **Riesgo:** Alta proporción de datos vacíos o mal diligenciados en variables clave.  
+  - **Contingencia:** Documentar y excluir variables no confiables, aplicar análisis solo a variables con consistencia mínima.  
+- **Riesgo:** Complejidad del diccionario (más de 100 variables).  
+  - **Contingencia:** Priorización de grupos de variables (demografía, educación, intervención, riesgos).  
+
+### Terminología
+- **NNA:** Niños, Niñas y Adolescentes.  
+- **TI:** Tipo de Intervención.  
+- **Ficha_fic:** Identificador único de cada registro.  
+- **PQR:** Peticiones, Quejas y Reclamos.  
+
+---
+
+## 3. Determinación de los objetivos de minería de datos
+
+### Objetivos de minería de datos
+Construir un proceso automatizado de comprensión de datos que genere:  
+- Diccionario de variables (tipos, vacíos).  
+- Reportes tabulares y gráficos de variables numéricas y categóricas.  
+- Matriz de correlaciones y distribución de datos faltantes.  
+- Resúmenes por grupos temáticos (demografía, educación, riesgos, intervención).  
+
+### Criterios de éxito de minería de datos
+- Reportes exportados en formato `.csv` y gráficos en `.png` dentro de la carpeta `reports/`.  
+- Ejecución reproducible del script en cualquier entorno Python.  
+- Identificación explícita de variables con:  
+  - Alta proporción de datos faltantes.  
+  - Duplicados.  
+
+---
+
+## 4. Plan del proyecto
+
+### Etapas del proceso
+1. **Comprensión del negocio** (fase actual).  
+2. **Comprensión de los datos:** inspección de la base de datos, diccionario, calidad y exploración inicial.  
+3. **Preparación de datos:** limpieza, selección y transformación de variables.  
+4. **Modelado:** técnicas estadísticas.  
+5. **Evaluación:** validación de resultados frente a objetivos de negocio.  
+6. **Despliegue:** entrega de reportes y visualizaciones en GitHub.  
+
+### Evaluación inicial de herramientas y técnicas
+- Python ofrece librerías adecuadas para análisis exploratorio (**Pandas, Seaborn, Matplotlib**).  
+- GitHub permite reproducibilidad y control de versiones.  
+
+---
