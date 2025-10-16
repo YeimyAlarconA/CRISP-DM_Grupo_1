@@ -1,0 +1,74 @@
+{
+  "fecha_analisis": "2025-10-16 19:48:09",
+  "total_registros": 56473,
+  "distribuciones": {
+    "SEXO_LABEL": {
+      "1- Hombre": 40.6,
+      "2- Mujer": 39.6,
+      "No especificado": 19.8
+    },
+    "RANGO_EDAD": {
+      "NaN": 43.8,
+      "6-11": 22.9,
+      "0-5": 14.9,
+      "12-14": 10.5,
+      "15-17": 7.8,
+      "18+": 0.1
+    },
+    "ZONA_LABEL": {
+      "No especificado": 100.0
+    },
+    "ESTRATO_SOCIOECONÓMICO_LABEL": {
+      "2. Bajo": 52.3,
+      "No especificado": 20.3,
+      "3. Medio-bajo": 16.0,
+      "1. Bajo-bajo": 11.4
+    },
+    "AFILIACIÓN_AL_SGSSS_LABEL": {
+      "1- Subsidiado": 33.7,
+      "2- Contributivo": 27.5,
+      "No especificado": 26.2,
+      "5- No asegurado": 11.5,
+      "3- Régimen de excepción/especial": 1.1,
+      "4- Vinculado": 0.0
+    },
+    "LUGAR_TRABAJO_LABEL": {
+      "4. En una UTI": 53.1,
+      "No especificado": 27.3,
+      "2. En la calle, estacionario o ambulante": 12.8,
+      "1. En la vivienda que habita": 6.6,
+      "6. Establecimientos abiertos al público": 0.1,
+      "5. En otra vivienda": 0.1,
+      "3. En el campo": 0.1,
+      "7. En una UTI | En otra vivienda": 0.0
+    }
+  },
+  "top_localidades": {
+    "99999": 9604,
+    "19- Ciudad Bolivar": 6713,
+    "7- Bosa": 5122,
+    "8- Kennedy": 4725,
+    "11- Suba": 4288,
+    "10- Engativá": 3304,
+    "5- Usme": 3086,
+    "18- Rafael Uribe Uribe": 2717,
+    "4- San Cristóbal": 2618,
+    "14- Los Mártires": 2451,
+    "3- Santa Fe": 2284,
+    "12- Barrios Unidos": 2037
+  },
+  "top_upz": {
+    "NaN": 9652,
+    "71.0": 2276,
+    "102.0": 1755,
+    "85.0": 1708,
+    "84.0": 1608,
+    "69.0": 1431,
+    "67.0": 1394,
+    "82.0": 1356,
+    "22.0": 1220,
+    "93.0": 1215,
+    "28.0": 1145,
+    "70.0": 1106
+  }
+}
