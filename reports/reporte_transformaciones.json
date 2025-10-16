@@ -1,0 +1,41 @@
+{
+  "fecha_proceso": "2025-10-16 19:47:53",
+  "dataset_original": {
+    "filas": 56473,
+    "columnas": 115
+  },
+  "dataset_final": {
+    "filas": 56473,
+    "columnas": 115
+  },
+  "transformaciones_realizadas": {
+    "pii_eliminadas": 10,
+    "espacios_limpiados": true,
+    "tokens_faltantes_normalizados": true,
+    "categoricas_imputadas": 8,
+    "variables_derivadas": 9,
+    "columnas_reordenadas": true,
+    "labels_canonicas_aplicadas": true
+  },
+  "variables_creadas": [
+    "RANGO_EDAD",
+    "ZONA_LABEL",
+    "SEXO_LABEL",
+    "ESTRATO_SOCIOECONÓMICO_LABEL",
+    "LUGAR_TRABAJO_LABEL",
+    "AFILIACIÓN_AL_SGSSS_LABEL",
+    "FLAG_AFILIACION_SGSSS",
+    "ESTADO_RESULTADO",
+    "UPZ_UPR_ALIAS"
+  ],
+  "calidad_final": {
+    "valores_faltantes_totales": 1056591,
+    "pct_faltantes_total": 16.27,
+    "filas_duplicadas": 4901
+  },
+  "archivos_salida": {
+    "csv": "data/procesados/NNA_TI_preparada.csv",
+    "excel": "data/procesados/NNA_TI_preparada.xlsx",
+    "diccionario": "reports/diccionario_datos_final.csv"
+  }
+}
